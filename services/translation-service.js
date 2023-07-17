@@ -50,6 +50,8 @@ const defaultBody = Object.freeze({
  *      or rejects with a string error message.
  */
 const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
+    console.log('url ' + url);
+    console.log('body ' + body);
     const body = Object.assign(Object.assign({}, defaultBody), jsonBodyToAdd);
     return new Promise(async (resolve, reject) => {
         try {
