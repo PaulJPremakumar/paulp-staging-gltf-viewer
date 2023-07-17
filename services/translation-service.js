@@ -51,8 +51,9 @@ const defaultBody = Object.freeze({
  */
 const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
     console.log('url ' + url);
-    console.log('*** body *** ' + jsonBodyToAdd);
     const body = Object.assign(Object.assign({}, defaultBody), jsonBodyToAdd);
+    console.log('*** body *** ' + JSON.stringify(body));
+
     return new Promise(async (resolve, reject) => {
         try {
             const resp = await fetch(url, {
