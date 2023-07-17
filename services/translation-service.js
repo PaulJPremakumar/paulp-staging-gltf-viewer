@@ -70,9 +70,11 @@ const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
             if (resp.ok) {
                 resolve({ contentType: resp.headers.get('Content-Type'), data: text });
             } else {
+                console.log('*** text *** ' + text);
                 reject(text);
             }
         } catch (err) {
+            console.log('*errr* ' + err);
             reject(err);
         }
     });
