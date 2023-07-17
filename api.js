@@ -56,7 +56,7 @@ apiRouter.get('/parts', (req, res) => {
  *      -or-
  *      -> 500, { error: '...' }
  */
-apiRouter.get('/gltf', async (req, res) => {
+apiRouter.get('/exportGltf', async (req, res) => {
     // Extract the necessary IDs from the querystring
     const did = req.query.documentId,
         wid = req.query.workspaceId,
