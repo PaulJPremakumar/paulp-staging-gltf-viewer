@@ -50,7 +50,6 @@ const defaultBody = Object.freeze({
  *      or rejects with a string error message.
  */
 const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
-    console.log('url ' + url);
     const body = Object.assign(Object.assign({}, defaultBody), jsonBodyToAdd);
     console.log('*** body *** ' + JSON.stringify(body));
     console.log('** auth ** ' + `Bearer ${userAccessToken}`);
