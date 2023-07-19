@@ -51,9 +51,6 @@ const defaultBody = Object.freeze({
  */
 const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
     const body = Object.assign(Object.assign({}, defaultBody), jsonBodyToAdd);
-    console.log('*** body *** ' + JSON.stringify(body));
-    console.log('** auth ** ' + `Bearer ${userAccessToken}`);
-
     return new Promise(async (resolve, reject) => {
         try {
             const resp = await fetch(url, {
@@ -69,7 +66,6 @@ const startTranslation = (userAccessToken, url, jsonBodyToAdd) => {
             if (resp.ok) {
                 resolve({ contentType: resp.headers.get('Content-Type'), data: text });
             } else {
-                console.log('*** text *** ' + text);
                 reject(text);
             }
         } catch (err) {

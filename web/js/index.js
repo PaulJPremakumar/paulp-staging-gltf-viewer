@@ -238,7 +238,6 @@ $elemSelector.addEventListener('change', async (evt) => {
     if (selectedOption.innerText !== '-- Select an Item --') {
         try {
             document.body.style.cursor = 'progress';
-            console.log('***REQ***' + `/api/exportGltf${evt.target.options[event.target.selectedIndex].getAttribute('href')}`);
             const resp = await fetch(`/api/exportGltf${evt.target.options[event.target.selectedIndex].getAttribute('href')}`);
             const json = await resp.json();
             if (json.id) {
